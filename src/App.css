@@ -1,0 +1,77 @@
+.row{
+  width: inherit;
+}
+.lineWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.partName{
+text-align: center;
+
+}
+.Banner
+{
+  width: inherit;
+  text-align: center;
+}
+.quantBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button{
+  height: 50px;
+  width: 50px;
+}
+.buttonWrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right{
+  margin-top: 4em;
+  height: 100%;
+  background-color: #cf8f2e;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.line{
+  margin: 30px 0 30px 0;
+  border-bottom: 2px solid orange;
+  width: 80%;
+}
+.total{
+  width: inherit;
+  text-align: right;
+  padding-right: 3em;
+}
+.img{
+  max-height: 100px;
+  background-size: cover;
+}
+.left{
+  padding-top: 5em;
+  height: 100%;
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.imgCover{
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.botRow{
+  margin-bottom: 2em ;
+}
+.botBtn{
+  margin: 0 1em 0 1em;
+  border-radius: 5px;
+}
