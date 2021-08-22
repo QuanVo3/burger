@@ -53,7 +53,48 @@ class BurgerO extends Component {
                 ],
             total: 0,
             order: [],
-            
+            defaultBurger : [
+                {
+                    id: 0,
+                    name: "lectuce",
+                    img: "../img/Veggie.png",
+                    price: 10,
+                    quant: 0,
+                    mStatus: true,
+                },
+                {
+                    id: 1,
+                    name: "beef",
+                    img: "../img/Beef.png",
+                    price: 25,
+                    quant: 0,
+                    mStatus: true,
+                },
+                {
+                    id: 2,
+                    name: "cheese",
+                    img: "../img/Cheese.png",
+                    price: 20,
+                    quant: 0,
+                    mStatus: true,
+                },
+                {
+                    id: 3,
+                    name: "Top Bun",
+                    img: "../img/topBuns.png",
+                    price: 1,
+                    quant: 0,
+                    mStatus: true,
+                },
+                {
+                    id: 4,
+                    name: "Bottom Bun",
+                    img: "../img/B-Buns.png",
+                    price: 1,
+                    quant: 0,
+                    mStatus: true,
+                },
+            ],
         };
         
     }
@@ -83,14 +124,26 @@ class BurgerO extends Component {
         let mNewCost = this.state.total;
         this.setState({ total: mNewCost - mCost })
     }
-    resetAll = () => (
+    resetAll = async() => {
       
-        this.state.burger.map((reset) => (
-            reset.setState({quant:0})
-        ))
-      
-    );
-
+       this.setState({burger:this.state.defaultBurger})
+       this.setState({total:0})
+       this.setState({order:[]})
+       console.log(this.state.burger)
+        };
+    promptOrders = () => {
+        alert("Thank you for your order!")
+    }
+    disableOrder = () => {
+        if(this.state.order.length > 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
     render() {
         return (
             <div className="row Wrapper">
@@ -126,7 +179,7 @@ class BurgerO extends Component {
                             <b className="total col-md-6">{this.state.total}$</b>
                         </div>
                         <div className="row botRow">
-                        <button className="botBtn" onClick = {() => this.resetAll()}>Order now!</button>
+                        <button className="botBtn" disabled = {this.disableOrder()} onClick = {() => {this.resetAll();this.promptOrders()}}>Order now!</button>
                         <button className="botBtn" onClick = {() => this.resetAll()}>Reset</button>
                         </div>
                     </div>
